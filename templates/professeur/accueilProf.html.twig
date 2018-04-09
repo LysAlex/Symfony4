@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Aide Stage | Accueil{% endblock %}
+
+{% block body %}
+
+    <header id="header" class="altr">
+
+    {{ include('professeur/menu.html.twig') }}
+
+    </header>
+
+    {{ include('banner.html.twig') }}
+
+    <!--Main-->
+    <section id="main" class="container">
+
+        <!-- Introduction -->
+
+            <h2>Bonjour et bienvenue sur le site web réalisé pour donner un coup de pouce aux 3èmes dans la recherche de leur stage ! </h2>
+                <h3>Cette version du site à laquelle vous, professeurs, avez accès, est différente de celle proposée aux élèves </h3>
+            <p style="padding-top: 40px; padding-bottom: 0;">Voici ce que vous pouvez faire sur cette version-ci: </p>
+            <ul style="padding-left:50px;">
+                <li>
+                    Voir la liste des élèves que vous suivrez tout au long de leur stage
+                </li>
+                <li>
+                    Voir la liste des élèves qui n'ont pas encore de professeur assigné
+                </li>
+                <li>
+                    Sélectionner le ou les élèves que vous comptez suivre durant cette période
+                </li>
+            </ul>
+        </section>
+
+        {{ include('footer.html.twig') }}
+
+        {% endblock %}

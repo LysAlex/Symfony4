@@ -1,0 +1,65 @@
+{% extends 'base.html.twig'%}
+
+{% block title %}Aide Stage | Accueil{% endblock %}
+
+{% block body %}
+    <!-- Wrapper -->
+
+
+    <!-- Header -->
+    <header id="header" class="altr">
+
+        {{ include('eleve/menu.html.twig') }}
+
+    </header>
+
+    {{ include('banner.html.twig') }}
+
+
+    <!--Main-->
+
+        <!-- Introduction -->
+        <section id="main" class="container">
+
+            <!--<?php
+
+                    if(isset($_GET["tut"])) {
+                        stage_add($_SESSION["id"], $_GET["tut"], $datetime);
+
+                        ?>
+
+            <center><h2><b>Votre stage a bien été ajouté !</b></h2></center>
+
+            <?php
+
+                        header('refresh:5;url=home.php'); } else {
+
+                        ?>-->
+
+            <h2>Bonjour et bienvenue sur le site web réalisé pour vous aider à trouver un stage ! </h2>
+                <h3>Vous avez des difficultés à trouver un stage ? Ce site annexe à celui de votre collège est là pour vous !</h3>
+            <p style="padding-top: 40px; padding-bottom: 0;">Sont à votre disposition sur ce site: </p>
+            <ul style="padding-left:50px;">
+                <li>
+                    une liste contenant des informations sur diverses entreprises ainsi que leur localisation pour vous repérer
+                </li>
+                <li>
+                    des documents sous format PDF téléchargeable et imprimable:
+                    <ul style="list-style-type:circle;">
+                        <li> attestation de stage</li>
+                        <li> exemples de lettres de motivation et CV</li>
+                    </ul>
+                </li>
+                <li>
+                    un formulaire à remplir afin de faire savoir à vos enseignants le fait que vous avez un stage
+                </li>
+            </ul>
+        </section>
+
+
+
+    <!-- Footer -->
+    {{ include('footer.html.twig') }}
+
+
+{% endblock %}

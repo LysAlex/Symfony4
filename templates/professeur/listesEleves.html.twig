@@ -1,0 +1,52 @@
+{% extends 'base.html.twig' %}
+
+{% block titre %} Voir les listes {% endblock %}
+
+{% block body %}
+
+    <header id="header" class="altr">
+        {{ include('professeur/menu.html.twig') }}
+    </header>
+
+    {{ include('banner.html.twig') }}
+
+    <!-- Main -->
+
+    <section class="container" id="main">
+    <!-- Introduction -->
+    <section id="intro" class="main">
+
+        <center><h2><b>Stages actuels</b></h2></center>
+        <table>
+            <tr>
+                <th><h3>Nom de l'élève </h3></th>
+                <th><h3>Prenom de l'élève</h3></th>
+                <th><h3>Classe de l'élève </h3></th>
+                <th> <h3>Année scolaire</h3></th>
+                <th><h3>Login </h3></th>
+                <th><h3>Password </h3></th>
+                <th><h3>Role </h3></th>
+                <th><h3>Present </h3></th>
+            </tr>
+
+            {% for i in listeEleves %}
+                <tr>
+                    <td>{{ i.nomEleve }}</td>
+                    <td>{{ i.prenomEleve }}</td>
+                    <td>{{ i.classeEleve }}</td>
+                    <td>{{ i.anneeScolaire }}</td>
+                    <td>{{ i.login }}</td>
+                    <td>{{ i.password }}</td>
+                    <td>{{ i.role }}</td>
+                    <td>{{ i.present }}</td>
+
+
+                </tr>
+            {% endfor %}
+        </table>
+        <a href="{{ path('ajoutEleve') }}" class="button fit">Clique ici si tu veux ajouter un élève !</a>
+    </section>
+
+    {{ include('footer.html.twig') }}
+
+{% endblock %}

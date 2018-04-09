@@ -1,0 +1,32 @@
+{% extends 'base.html.twig'%}
+
+{% block title %}Ajouter une entreprise{% endblock %}
+
+{% block body %}
+    <!-- Wrapper -->
+
+
+    <!-- Header -->
+    <header id="header" class="altr">
+        {{ include('eleve/menu.html.twig') }}
+    </header>
+
+    {{ include('banner.html.twig') }}
+
+    <!-- Main -->
+    <section id="main" class="container">
+
+
+        <h2>Les informations sur l'entreprise qui vous accueille (si non présente dans la liste proposée):</h2>
+
+        <h3 class="major">Formulaires</h3>
+        {{ form_start(form) }}
+        {{ form_widget(form) }}
+        <br /><button>Envoyer</button>
+        {{ form_end(form) }}
+    </section>
+
+
+    {{ include('footer.html.twig') }}
+
+{% endblock %}

@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Stage | Formulaire{% endblock %}
+
+{% block body %}
+
+
+    <!-- Header -->
+    <header id="header" class="altr">
+        {{ include('eleve/menu.html.twig') }}
+    </header>
+
+
+    {{ include('banner.html.twig') }}
+
+
+    <section id="main" class="container">
+        <h3 id="form" align="center" style="margin-bottom:150px;">Vous êtes priés de remplir ce formulaire
+            si vous disposez d'un stage</h3>
+
+        <h3 class="major">Formulaires</h3>
+        {{ form_start(form) }}
+        {{ form_widget(form) }}
+        <br>
+        <td><a href="{{ path('eleve_listeTuteur') }}">Vous ne trouvez pas votre tuteur dans cette
+                liste ? cliquez ici !</a></td>
+        </br>
+        <br /><button>Envoyer</button>
+        {{ form_end(form) }}
+
+
+
+        </section>
+
+    {{ include('footer.html.twig') }}
+
+{% endblock %}
+
+
+

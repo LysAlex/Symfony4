@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Aide Stage | Aide{% endblock %}
+{% block body %}
+
+    <header id="header" class="altr">
+        {{ include('professeur/menu.html.twig') }}
+    </header>
+
+    {{ include('banner.html.twig') }}
+
+    <section class="container" id="main">
+
+            <a href=./public/aide/eleves.pdf class="button fit" TARGET=_BLANK>Cliquez ici pour la version élève</a></center>
+            <a href=./aide/prof.pdf class="button fit" TARGET=_BLANK>Cliquez ici pour la version professeur</a></center></td>
+            <a href=./aide/admin.pdf class="button fit" TARGET=_BLANK>Cliquez ici pour la version administrateur</a></center></td>
+
+    </section>
+
+{{ include('footer.html.twig') }}
+
+
+{% endblock  %}

@@ -1,0 +1,29 @@
+{% extends 'base.html.twig'%}
+
+{% block title %}Aide Stage | Connexion{% endblock %}
+
+
+{% block body %}
+    <header id="header" class="alt">
+        {{ include('menu.html.twig') }}
+    </header>
+
+    <!-- Banner -->
+    <!-- Test --->
+    <section id="banner">
+        <h2>Dispositif d'aide à la recherche </h2>
+        <h3>Stage de découverte des 3èmes</h3>
+        <p>Veuillez sélectionner le mode d'authentification</p>
+
+        <ul class="actions">
+            <li><a href="{{ path('professeur') }}" class="button">Professeur</a></li>
+            <li><a href="{{ path('eleve') }}" class="button">Élève</a></li>
+            <!-- <li><a href="{{ path('admin') }}" class="button">Administrateur</a></li> -->
+
+        </ul>
+    </section>
+
+    {{ include('footer.html.twig') }}
+
+{% endblock %}
+

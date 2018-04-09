@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Aide Stage | Accueil{% endblock %}
+
+{% block body %}
+
+
+    <header id="header" class="altr">
+        {{ include('admin/menu.html.twig') }}
+    </header>
+
+    {{ include('banner.html.twig') }}
+
+    <!-- Introduction -->
+    <section id="main" class="container">
+        <h2>Bonjour et bienvenue sur le site web réalisé pour donner un coup de pouce aux 3èmes dans la recherche de leur stage ! </h2>
+            <h3>Cette version du site à laquelle vous avez accès, est différente de celle proposée aux élèves ainsi qu'aux professeurs </h3>
+        <p style="padding-top: 40px; padding-bottom: 0;">Voici ce que vous pouvez faire en tant qu'admin: </p>
+        <ul style="padding-left:50px;">
+            <li>
+                Voir la liste des élèves, professeurs, tuteurs et entreprises
+            </li>
+            <li>
+                Voir la liste des élèves qui n'ont pas encore de professeur assigné et celle de ceux qui sont suivis
+            </li>
+            <li>
+                Vider les tables élèves, stages et tuteurs
+            </li>
+            <li>
+                Supprimer, ajouter, modifier un élève, un professeur ou une entreprise
+            </li>
+            <li>
+                Supprimer un stage (dans le cas où l'élève se serait trompé, afin qu'il recommence la procédure)
+            </li>
+        </ul>
+    </section>
+
+
+    {{ include('footer.html.twig') }}
+    {% endblock %}

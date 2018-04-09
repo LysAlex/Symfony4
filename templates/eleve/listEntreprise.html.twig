@@ -1,0 +1,114 @@
+{% extends 'base.html.twig'%}
+
+{% block title %}Stage | Liste d'entreprises{% endblock %}
+
+{% block body %}
+    <!-- Wrapper -->
+
+    <!-- Header -->
+    <header id="header" class="altr">
+
+        {{ include('eleve/menu.html.twig') }}
+
+    </header>
+
+    <!-- Banner -->
+    <section id="banner">
+        <h2>Dispositif d'aide à la recherche </h2>
+        <h3>Stage de découverte des 3èmes</h3>
+    </section>
+
+
+    <section id="main" class="container">
+
+        <!-- Introduction -->
+
+
+        <!--<div id="main">
+
+            <div class="row uniform 50%">
+                <div class="select-wrapper">
+                    <section id="intro" class="main">
+
+                        <form>
+                            <div class="9u 12u(mobilep)">
+
+                                <select style="font-size:15px; width: 300px" type="search" id="search" placeholder="Rechercher une entreprise" name="query" value="<?php echo $filtre?>">
+                                    <option value="Agriculture ">Agriculture</option>
+                                    <option value="Agroalimentaire">Agroalimentaire</option>
+                                    <option value="Art/Spectacle">Art/Spectacle</option>
+                                    <option value="Banque/Assurance/Finance">Banque/Assurance</option>
+                                    <option value="BTP">BTP</option>
+                                    <option value="Commerce/Distribution">Commerce/Distribution</option>
+                                    <option value="Droit/Justice">Droit/Justice</option>
+                                    <option value="Economie/Gestion">Economie/Gestion</option>
+                                    <option value="Enseignement">Enseignement</option>
+                                    <option value="Environnement">Environnement</option>
+                                    <option value="Fonction publique">Fonction publique</option>
+                                    <option value="Hôtelerie">Hôtelerie</option>
+                                    <option value="Industrie">Industrie</option>
+                                    <option value="Journalisme">Journalisme</option>
+                                    <option value="Logistique">Logistique</option>
+                                    <option value="Multimedia/Audiovisuel/Informatique">Multimedia/Audiovisuel/Informatique</option>
+                                    <option value="Santé ">Santé </option>
+                                    <option value="Sciences humaines">Sciences humaines</option>
+                                    <option value="Sécurité">Sécurité</option>
+                                    <option value="Sport">Sport</option>
+                                    <option value="Tourisme">Tourisme</option>
+                                    <option value="Transports">Transports</option>
+                                    <option value="Autre secteur">Autre</option>
+                                </select>
+                            </div>
+
+                            <div class="9u 12u(mobilep)">
+                                <input type="submit" value="Recherche">
+                            </div>
+
+                        </form>
+
+                    </section>
+                </div>
+            </div>
+        </div>-->
+
+        <table class="table table-bordered">
+
+
+            <div class="table-wrapper">
+
+                <tr>
+                    <th><h2><b> Nom </b></h2></th>
+                    <th><h2><b> Secteur d'activité </b></h2></th>
+                    <th><h2><b> Adresse </b></h2></th>
+                    <th><h2><b> Code Postale </b></h2></th>
+                    <th><h2><b> Ville </b></h2></th>
+                    <th><h2><b> Géolocalisation </b></h2></th>
+                </tr>
+
+                {% for i in entreprises %}
+                <tr>
+                    <td>{{ i.nomEntreprise }}</td>
+                    <td>{{ i.activiteEntreprise }}</td>
+                    <td>{{ i.adresseEntreprise }}</td>
+                    <td>{{ i.villeEntreprise }}</td>
+                    <td>{{ i.cpEntreprise }}</td>
+                    <td><center><a href="https://www.google.fr/maps/dir/College+Les+Capucins,+Route+de+Voisenon,+77000+Melun/{{ i.adresseEntreprise }} {{ i.cpEntreprise }}{{ i.villeEntreprise }}"><i class="fa fa-map-marker" style="font-size:24px;color:black"></i></a></center></td>
+
+
+                </tr>
+                {% endfor %}
+
+
+            </div>
+        </table>
+        <a href="{{ path('ajout_entreprise') }}" class="button fit">Clique ici si tu veux ajouter une entreprise!</a>
+
+    </section>
+
+    <!-- Footer -->
+    {{ include('footer.html.twig') }}
+
+    </div>
+
+
+{% endblock %}

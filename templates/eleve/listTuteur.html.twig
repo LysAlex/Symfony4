@@ -1,0 +1,67 @@
+{% extends 'base.html.twig'%}
+
+{% block title %}Listes des entreprises{% endblock %}
+
+{% block body %}
+    <!-- Wrapper -->
+
+    <!-- Header -->
+    <header id="header" class="altr">
+
+        {{ include('eleve/menu.html.twig') }}
+
+    </header>
+
+    <!-- Banner -->
+    <section id="banner">
+        <h2>Dispositif d'aide à la recherche </h2>
+        <h3>Stage de découverte des 3èmes</h3>
+    </section>
+
+
+    <section id="main" class="container">
+
+        <!-- Introduction -->
+
+
+        <div id="main">
+        <table class="table table-bordered">
+
+
+            <div class="table-wrapper">
+
+                <tr>
+                    <th><h2><b> Nom </b></h2></th>
+                    <th><h2><b> Prenom </b></h2></th>
+                    <th><h2><b> Mail </b></h2></th>
+                    <th><h2><b> Numéro de téléphone </b></h2></th>
+                    <th><h2><b> Entreprise </b></h2></th>
+
+                </tr>
+
+                {% for i in tuteurs %}
+                    <tr>
+                        <td>{{ i.nomTuteur }}</td>
+                        <td>{{ i.prenomTuteur }}</td>
+                        <td>{{ i.mailTuteur }}</td>
+                        <td>{{ i.telTuteur }}</td>
+                        <td>{{ i.Entreprise.nomEntreprise }}</td>
+
+
+                    </tr>
+                {% endfor %}
+
+
+            </div>
+        </table>
+        <a href="{{ path('ajout_tuteur') }}" class="button fit">Clique ici si tu veux ajouter un tuteur !</a>
+
+    </section>
+
+    <!-- Footer -->
+    {{ include('footer.html.twig') }}
+
+    </div>
+
+
+{% endblock %}

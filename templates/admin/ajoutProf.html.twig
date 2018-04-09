@@ -1,0 +1,31 @@
+{% extends 'base.html.twig'%}
+
+{% block title %}Stage | Liste des élèves{% endblock %}
+
+{% block body %}
+    <!-- Header -->
+    <header id="header" class="altr">
+        {{ include('admin/menu.html.twig') }}
+    </header>
+
+    <!-- Banner -->
+    {{ include('banner.html.twig') }}
+
+
+    <section id="main" class="container">
+        <h2>Formulaire d'un(e) Nouveau(elle) élève :</h2>
+
+        <h3 class="major">Formulaires</h3>
+        {{ form_start(form) }}
+        {{ form_widget(form) }}
+        <br /><button>Envoyer</button>
+        {{ form_end(form) }}
+    </section>
+
+    <!-- Footer -->
+    {{ include('footer.html.twig') }}
+
+    </div>
+
+
+{% endblock %}

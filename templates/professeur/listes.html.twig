@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block titre %} Voir les listes {% endblock %}
+
+{% block body %}
+
+<header id="header" class="altr">
+    {{ include('professeur/menu.html.twig') }}
+</header>
+
+    {{ include('banner.html.twig') }}
+
+    <!-- Main -->
+
+    <section class="container" id="main">
+            <!-- Introduction -->
+            <section id="intro" class="main">
+
+                <center><h2><b>Stages actuels</b></h2></center>
+                <table>
+                    <tr>
+                        <th><h3>Eleve</h3></th>
+                        <th><h3>Entreprise</h3></th>
+                        <th><h3>Tuteur</h3></th>
+                       <th> <h3>Professeur référent</h3></th>
+                        <th><h3>Date à laquelle l'élève a rentré son stage sur le site</h3></th>
+                    </tr>
+
+                    {% for i in listes %}
+                        <tr>
+                            <td>{{ i.UserEleve.nomEleve }}</td>
+                            <td>{{ i.Tuteur.Entreprise.nomEntreprise }}</td>
+                            <td>{{ i.Tuteur.nomTuteur }}</td>
+                            <td>{{ i.UserProf.nomProf }}</td>
+                            <td>{{ i.dateStage }}</td>
+
+
+
+                        </tr>
+                    {% endfor %}
+                </table>
+            </section>
+
+    {{ include('footer.html.twig') }}
+
+{% endblock %}
